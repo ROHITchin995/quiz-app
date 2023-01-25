@@ -242,3 +242,35 @@ main{
   background: #805900;
   color: #ffb100;
 }
+.submit_button{
+  width: 100%;
+  margin-top: 3rem;
+}
+/* Form CSS */
+.setup_form h2 {
+  margin-bottom: 2rem;
+}
+.form_control{
+  margin-bottom: 2rem;
+}
+.form_control label {
+  display: block;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: var(--clr-grey-3);
+  margin-bottom: 0.5rem;
+}
+.form_input{
+  border: none;
+  background: var(--clr-grey-10);
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  width: 100%;
+  border-radius: var(--radius);
+}
+.error {
+  color: var(--clr-red-dark);
+  text-transform: capitalize;
+}
+
+/* Loading CSS */
