@@ -64,6 +64,31 @@ body {
   line-height: 1.5;
   font-size: 0.875rem;
 }
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-3);
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -115,4 +140,105 @@ code {
 }
 .close_button{
   margin-right: auto;
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+/* Quiz */
+main{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quiz{
+  width: 90vw;
+  max-width: var(--max-width);
+  margin: 4rem auto;
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  padding: 3rem;
+}
+.quiz_small{
+  max-width: 500px;
+}
+.container h2{
+  margin-bottom: 2rem;
+  text-align: center;
+  line-height: 1.5;
+  text-transform: none;
+}
+.answer_button{
+  display: block;
+  width: 100%;
+  margin: 0.75rem auto;
+  background: var(--clr-primary-7);
+  border-radius: var(--radius);
+  border-color: transparent;
+  color: var(--clr-black);
+  letter-spacing: var(--spacing);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  transition: var(--transition);
+}
+@media screen and (min-width: 576px) {
+  .answer_button {
+    max-width: 60%;
+  }
+}
+.answer_button:hover{
+  background: var(--clr-primary-5);
+  color: var(--clr-white);
+}
+.correct_answers{
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  text-align: right;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  color: var(--clr-green-dark);
+}
+.submit_button, .close_button, .next_question{
+  border-radius: var(--radius);
+  border-color: transparent;
+  padding: 0.25rem 0.5rem;
+  display: block;
+  width: 35%;
+  margin-left: auto;
+  margin-top: 2rem;
+  text-transform: capitalize;
+  font-weight: 700;
+  letter-spacing: var(--spacing);
+  font-size: 1rem;
+  background: #ffb100;
+  color: var(--clr-black);
+  transition: var(--transition);
+  cursor: pointer;
+}
+.next_question:hover{
+  background: #805900;
+  color: #ffb100;
 }
