@@ -38,7 +38,6 @@ const AppProvider = ({children}) =>{
                 setWating(true)
                 setError(true)
             }
-            console.log(data)
         }
         else{
             setWating(true)
@@ -49,12 +48,20 @@ const AppProvider = ({children}) =>{
         setIndex((oldIndex)=>{
             const index = oldIndex + 1
             if(index > questions.length - 1){
-                return <h1>questions ended</h1>
+               openModal()
             }
             else{
                 return index
             }
         })
+    }
+    const openModal = ()=>{
+        setIsModalOpen(true)
+    }
+    const closeModal = ()=>{
+        setWating(true)
+        setCorrect(0)
+        setIsModalOpen(false)
     }
     const handleChange = (e)=>{
         const name = e.target.name
@@ -66,7 +73,6 @@ const AppProvider = ({children}) =>{
         e.preventDefault()
         const { amount, category, difficulty} = quiz
         const url = `${app_url}amount=${amount}&difficulty=${difficulty}&category=${table[category]}&type=multiple`
-        console.log(url)
         fetchQuestions(url)
     }
     const checkAnswer = (value)=>{
@@ -77,7 +83,7 @@ const AppProvider = ({children}) =>{
     }
     return(
         <AppContext.Provider value={{waiting, loading, error, handleSubmit, handleChange, 
-        quiz, questions, index, nextQuestion, checkAnswer, correct}}>
+        quiz, questions, index, nextQuestion, checkAnswer, correct, closeModal}}>
             {children}
         </AppContext.Provider>
     )

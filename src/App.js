@@ -1,11 +1,10 @@
 import './App.css';
 import { useGlobalContext } from './context';
 import { Loading } from './Loading';
+import { Modal } from './Modal';
 import { SetupForm } from './SetupForm';
 
 function App() {
-  // console.log(process.env.REACT_APP_API_URL)
-
   const {waiting, loading, questions, index, nextQuestion, checkAnswer, correct} = useGlobalContext()
 
   if(waiting){
@@ -28,6 +27,7 @@ function App() {
 
   return (
     <main>
+      <Modal />
       <section className='quiz'>
         <p className='correct_answers'>
           correct answers : {correct}/ {index}
