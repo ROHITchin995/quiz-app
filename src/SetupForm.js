@@ -3,7 +3,7 @@ import { useGlobalContext } from './context'
 
 
 export const SetupForm = () => {
- const {error, handleSubmit} = useGlobalContext()
+ const {error, handleSubmit, handleChange, quiz} = useGlobalContext()
   return (
     <main>
         <section className='quiz quiz_small'>
@@ -12,12 +12,12 @@ export const SetupForm = () => {
                 <div className='form_control'>
                     {/* Number of questions */}
                     <label htmlFor="amount">Number of questions</label>
-                    <input type="number" name="amount" id="amount" />                    
+                    <input type="number" name="amount" id="amount" value={quiz.amount} onChange={handleChange}/>                    
                 </div>
                 {/* Category */}
                 <div className='form_control'>
                     <label htmlFor="category">Category</label>
-                    <select name="category" id="category">
+                    <select name="category" className='form_input' id="category" value={quiz.category} onChange={handleChange}>
                         <option value="sports">sports</option>
                         <option value="history">history</option>
                         <option value="politics">politics</option>
@@ -26,7 +26,7 @@ export const SetupForm = () => {
                 <div className='form_control'>
                 {/* Difficulty */}
                 <label htmlFor="difficulty">Select difficulty</label>
-                <select name="difficulty" id="difficulty">
+                <select name="difficulty" className='form_input' id="difficulty" value={quiz.difficulty} onChange={handleChange}>
                     <option value="easy">easy</option>
                     <option value="medium">medium</option>
                     <option value="hard">hard</option>
@@ -37,7 +37,7 @@ export const SetupForm = () => {
                         Can't generate questions, please try different options
                     </p>
                 )}
-                <button type='submit' className='submit_button'>
+                <button type='submit' onClick={handleSubmit} className='submit_button'>
                     Start
                 </button>
             </form>
