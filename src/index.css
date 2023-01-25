@@ -64,6 +64,13 @@ body {
   line-height: 1.5;
   font-size: 0.875rem;
 }
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
 h1,
 h2,
 h3,
@@ -274,3 +281,8 @@ main{
 }
 
 /* Loading CSS */
+@keyframes spinner  {
+  to {
+    transform: rotate(360deg);
+  }
+}

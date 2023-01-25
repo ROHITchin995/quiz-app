@@ -12,7 +12,7 @@ export const SetupForm = () => {
                 <div className='form_control'>
                     {/* Number of questions */}
                     <label htmlFor="amount">Number of questions</label>
-                    <input type="number" name="amount" id="amount" value={quiz.amount} onChange={handleChange}/>                    
+                    <input type="number" className='form_input' name="amount" id="amount" value={quiz.amount} onChange={handleChange}/>                    
                 </div>
                 {/* Category */}
                 <div className='form_control'>
