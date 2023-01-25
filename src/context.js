@@ -49,6 +49,7 @@ const AppProvider = ({children}) =>{
             const index = oldIndex + 1
             if(index > questions.length - 1){
                openModal()
+               return 0
             }
             else{
                 return index
@@ -83,7 +84,7 @@ const AppProvider = ({children}) =>{
     }
     return(
         <AppContext.Provider value={{waiting, loading, error, handleSubmit, handleChange, 
-        quiz, questions, index, nextQuestion, checkAnswer, correct, closeModal}}>
+        quiz, questions, index, nextQuestion, checkAnswer, correct, closeModal, isModalOpen}}>
             {children}
         </AppContext.Provider>
     )
